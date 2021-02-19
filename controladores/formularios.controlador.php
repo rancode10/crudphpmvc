@@ -6,9 +6,14 @@ Class ControladorFormularios{
 	static public function ctrRegistro(){
 
 		if (isset($_POST["registroNombre"])) {
-			//return $_POST["registroNombre"]."<br>".$_POST["registroEmail"]."<br>".$_POST["registroPassword"]."<br>";
+			
+			$tabla = "registros";
+			$datos = array("nombre" => $_POST["registroNombre"],
+							"email" => $_POST["registroEmail"],
+							"password" => $_POST["registroPassword"]);			
 
-			return "ok";
+			$respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
+			return $respuesta;
 		}
 
 	}
