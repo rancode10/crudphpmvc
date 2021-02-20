@@ -10,8 +10,8 @@ if (!isset($_SESSION["validarIngreso"])) {
 	}
 }
 
-$usuarios = ControladorFormularios::ctrSeleccionarRegistros();
-//echo '<pre>'; print_r($usuarios); echo "</pre>";
+$usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
+	
 
  ?>
 
@@ -35,7 +35,7 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistros();
 				<td><?php echo $value["fecha"]; ?></td>			
 				<td>
 					<div class="btn-group">
-						<button class="btn btn-warning"><i class="fa fa-pencil-alt"></i></button>
+						<a href="index.php?pagina=editar&id=<?php echo $value["id"]; ?>" class="btn btn-warning"><i class="fa fa-pencil-alt"></i></a>
 						&nbsp;
 						<button class="btn btn-danger"><i class="fa fa-trash-alt"></i></button>
 					</div>
