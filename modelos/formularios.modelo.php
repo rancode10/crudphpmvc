@@ -20,4 +20,13 @@ class ModeloFormularios{
 		}			
 		$stmt=null;
 	}
+
+	//seleccionar registros
+	static public function mdlSeleccionarRegistros($tabla){
+
+		$stmt = Conexion::conectar()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha FROM $tabla ORDER BY id DESC");
+		$stmt->execute();
+		return $stmt -> fetchAll();
+		$stmt = null;		
+	}
 }

@@ -17,4 +17,12 @@ Class ControladorFormularios{
 		}
 
 	}
+
+	//seleccionar registros
+	static public function ctrSeleccionarRegistros(){
+
+		$tabla = "registros";
+		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla);
+		return $respuesta;
+	}
 }
